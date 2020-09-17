@@ -15,7 +15,6 @@ const requestHandler = (req, res) => {
             body.push(chunk);
             console.log(chunk);
         });
-
         return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             const message = parsedBody.split('=')[1];
